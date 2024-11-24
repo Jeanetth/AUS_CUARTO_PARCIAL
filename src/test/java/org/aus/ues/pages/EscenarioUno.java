@@ -5,7 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class MainNGTest {
+public class EscenarioUno {
     protected WebDriver driver;
 
     // URL definida directamente en el código
