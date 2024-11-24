@@ -39,6 +39,10 @@ public class EscenarioUno {
        homePage.seleccionarDistrito("Santa Ana");
        homePage.clickBuscarTienda();
        homePage.clickWalmartSantaAna();
+       Thread.sleep(30000);
+       String direccion = homePage.getDireccionCompleta();
+       System.out.println("Dirección completa: " + direccion);
+       Thread.sleep(30000);
        homePage.clickAceptar();
        Thread.sleep(30000);
        

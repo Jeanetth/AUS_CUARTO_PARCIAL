@@ -1,6 +1,8 @@
 package org.aus.ues.pages;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,6 +26,9 @@ public class TiendaPage extends BasePage {
 
     // Localizador del botón "Buscar tienda"
 private By buscarTiendaDiv = By.xpath("//div[text()='Buscar tienda']");
+private By direccionPartes = By.cssSelector("div.c-gray.elipsis");
+
+
 
     // Constructor
     public TiendaPage(WebDriver driver) {
@@ -116,6 +121,31 @@ private By buscarTiendaDiv = By.xpath("//div[text()='Buscar tienda']");
     WebElement aceptarButton = wait.until(ExpectedConditions.elementToBeClickable(aceptarDiv));
     aceptarButton.click();
 }
+
+   public List<String> getDirecciones() {
+    List<WebElement> partes = driver.findElements(direccionPartes);
+    List<String> direcciones = new ArrayList<>();
+
+    for (WebElement parte : partes) {
+        direcciones.add(parte.getText());
+    }
+
+    return direcciones;
+}
+
+public String getDireccionCompleta() {
+    List<WebElement> partes = driver.findElements(direccionPartes);
+    StringBuilder direccionCompleta = new StringBuilder();
+
+    for (WebElement parte : partes) {
+        direccionCompleta.append(parte.getText()).append(" ");
+    }
+
+    return direccionCompleta.toString().trim();
+}
+
+
+
 
 
 }
