@@ -20,15 +20,22 @@ public class EscenarioUno {
         driver.get(URL);
     }
     
-    
+    //Test Case ID :TW_001
+    //Descripcion:Seleccion de departamento y que las opciones sean las correctas 
     @Test
-    public void testNavigateAndClick() {
+    public void testNavigateAndClick() throws InterruptedException {
        TiendaPage homePage = new TiendaPage(driver);
 
         // Interacciones en la página
-    
+         Thread.sleep(300);
        homePage.clickMenuButton();
+      
+       
        homePage.clickDepartamento();
+       homePage.seleccionarDepartamento("Santa Ana");
+       homePage.clickMunicipio();
+       Thread.sleep(30000);
+       
 
         // Verificar el título de la página
         String title = homePage.getPageTitle();
