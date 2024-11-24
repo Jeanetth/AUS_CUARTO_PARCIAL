@@ -1,6 +1,7 @@
 package org.aus.ues.pages;
 
 import org.openqa.selenium.WebDriver;
+import static org.testng.AssertJUnit.assertTrue;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -46,14 +47,17 @@ public class EscenarioUno {
        homePage.clickAceptar();
        Thread.sleep(30000);
        
-       
+        String direccionEsperada = "Santa Ana, Santa Ana, Avenida Independencia Prolongación de Av. Indep. Sur, Loma Alta";
+    assertTrue("La dirección no coincide con la esperada", direccion.equals(direccionEsperada));
 
         // Verificar el título de la página
         String title = homePage.getPageTitle();
         System.out.println("Título de la página: " + title);
-
+        
         // Validación
         assert title.contains("Walmart");
+        
+        
     }
 
     @AfterClass
