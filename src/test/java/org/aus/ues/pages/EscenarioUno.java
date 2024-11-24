@@ -34,7 +34,14 @@ public class EscenarioUno {
        homePage.clickDepartamento();
        homePage.seleccionarDepartamento("Santa Ana");
        homePage.clickMunicipio();
+       homePage.seleccionarMunicipio("Santa Ana Centro");
+       homePage.clickDistrito();
+       homePage.seleccionarDistrito("Santa Ana");
+       homePage.clickBuscarTienda();
+       homePage.clickWalmartSantaAna();
+       homePage.clickAceptar();
        Thread.sleep(30000);
+       
        
 
         // Verificar el título de la página
