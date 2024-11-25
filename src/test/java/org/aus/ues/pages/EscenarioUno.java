@@ -9,15 +9,13 @@ import org.testng.annotations.Test;
 public class EscenarioUno {
     protected WebDriver driver;
 
-    // URL definida directamente en el código
+
     private static final String URL = "https://www.walmart.com.sv/";
 
     @BeforeClass
     public void setup() {
-        // Inicializar el WebDriver
-        driver = BasePage.initDriver();
 
-        // Navegar a la URL definida
+        driver = BasePage.initDriver();
         driver.get(URL);
     }
     
@@ -26,12 +24,8 @@ public class EscenarioUno {
     @Test
     public void testNavigateAndClick() throws InterruptedException {
        TiendaPage homePage = new TiendaPage(driver);
-
-        // Interacciones en la página
-         Thread.sleep(300);
+       Thread.sleep(30000);
        homePage.clickMenuButton();
-      
-       
        homePage.clickDepartamento();
        homePage.seleccionarDepartamento("Santa Ana");
        homePage.clickMunicipio();
@@ -46,23 +40,15 @@ public class EscenarioUno {
        Thread.sleep(30000);
        homePage.clickAceptar();
        Thread.sleep(30000);
-       
-        String direccionEsperada = "Santa Ana, Santa Ana, Avenida Independencia Prolongación de Av. Indep. Sur, Loma Alta";
-    assertTrue("La dirección no coincide con la esperada", direccion.equals(direccionEsperada));
-
-        // Verificar el título de la página
-        String title = homePage.getPageTitle();
-        System.out.println("Título de la página: " + title);
-        
-        // Validación
-        assert title.contains("Walmart");
-        
-        
+       String direccionEsperada = "Santa Ana, Santa Ana, Avenida Independencia Prolongación de Av. Indep. Sur, Loma Alta";
+       assertTrue("La dirección no coincide con la esperada", direccion.equals(direccionEsperada));
+       String title = homePage.getPageTitle();
+       System.out.println("Título de la página: " + title);
+       assert title.contains("Walmart");   
     }
 
     @AfterClass
     public void tearDown() {
-        // Cerrar el navegador después de las pruebas
         if (driver != null) {
             driver.quit();
         }

@@ -32,7 +32,12 @@
             <artifactId>webdrivermanager</artifactId>
             <version>5.6.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>io.github.soc</groupId>
+            <artifactId>testng-runtime_sjs0.6_2.10</artifactId>
+            <version>4.0.0-M3</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 
 </project>

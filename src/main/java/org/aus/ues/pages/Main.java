@@ -5,7 +5,8 @@ import org.aus.ues.pages.BasePage;
 import org.aus.ues.pages.TiendaPage;
 import org.openqa.selenium.WebDriver;
 
-public class Main{
+public class Main {
+
     public static void main(String[] args) {
         WebDriver driver = null;
 
