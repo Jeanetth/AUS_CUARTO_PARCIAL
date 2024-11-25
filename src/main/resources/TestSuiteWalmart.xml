@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite Walmart Pruebas">
+    <test name="Pruebas">
+        <classes>
+            <!-- Lista de clases de prueba -->
+            <class name="org.aus.ues.pages.EscenarioUno"/>
+            <class name="org.aus.ues.pages.EscenarioDos"/>
+        </classes>
+    </test>
+</suite>
+
+

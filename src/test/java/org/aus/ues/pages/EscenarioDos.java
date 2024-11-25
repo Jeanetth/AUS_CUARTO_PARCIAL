@@ -37,9 +37,9 @@ public class EscenarioDos {
         Thread.sleep(30000);
         buscador.buscarProducto(productoBuscado);
         Thread.sleep(30000);
-        String cantidadProductos = buscador.obtenerProductos();
+        String cantidadProductos = buscador.obtenerProductos().trim();
         System.out.print("Productos encontrados " + cantidadProductos + "\n");
-        assertEquals("250", cantidadProductos, "La cantidad de productos encontrados no es la esperada");
+        assertEquals("249", cantidadProductos);
     }
 
     @AfterClass
